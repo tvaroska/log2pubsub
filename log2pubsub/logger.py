@@ -43,20 +43,20 @@ class PubSubLogger(CustomLogger):
 
 
     # TODO: Prompt management from promptgit
-    # async def async_pre_call_hook(self, user_api_key_dict: UserAPIKeyAuth, cache: DualCache, data: dict, call_type: Literal[
-    #         "completion",
-    #         "text_completion",
-    #         "embeddings",
-    #         "image_generation",
-    #         "moderation",
-    #         "audio_transcription",
-    #     ]): 
-    #     if 'prompt' not in data:
-    #         return "Prompt ID missing"
+    async def async_pre_call_hook(self, user_api_key_dict: UserAPIKeyAuth, cache: DualCache, data: dict, call_type: Literal[
+            "completion",
+            "text_completion",
+            "embeddings",
+            "image_generation",
+            "moderation",
+            "audio_transcription",
+        ]): 
+        if 'prompt' not in data:
+            return "Prompt ID missing"
 
-    #     data['messages'] = [
-    #         {"role": "system", "content": "Answer the question like you are speaking to a toddler."},
-    #         {"role": "user", "content": data['question'] }
-    #     ]
+        data['messages'] = [
+            {"role": "system", "content": "Answer the question like you are speaking to a toddler."},
+            {"role": "user", "content": data['question'] }
+        ]
 
-    #     return data 
+        return data 
