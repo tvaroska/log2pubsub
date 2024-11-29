@@ -7,9 +7,9 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = ">=3.10,<3.13"
-litellm = {extras = ["proxy"], version = "^1.48.5"}
-google-cloud-aiplatform = "^1.68.0"
-google-cloud-pubsub = "^2.23.1"
+litellm = {extras = ["proxy"], version = ">=1.48.5"}
+google-cloud-aiplatform = ">=1.68.0"
+google-cloud-pubsub = ">=2.23.1"
 promptgit = "^0.2.0"
 
 
